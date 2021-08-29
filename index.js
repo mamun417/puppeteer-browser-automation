@@ -16,7 +16,17 @@ const puppeteer = require('puppeteer');
     await page.keyboard.press('Enter');
     await page.waitForNavigation({waitUntil: 'networkidle2', timeout: 0})
     await page.goto('https://digitalit.app/hourly-income', {waitUntil: 'networkidle2', timeout: 0});
-    await page.goto('https://digitalit.app/logout', {waitUntil: 'networkidle2', timeout: 0});
+    // await page.goto('https://digitalit.app/logout', {waitUntil: 'networkidle2', timeout: 0});
+
+    try {
+        await page.click('#contnet > div > div > div.col-md-9.sett_page > div > form > button');
+    } catch {
+        console.log('btn not found')
+    }
+
+    await page.goto('https://digitalit.app/video-income', {waitUntil: 'networkidle2', timeout: 0});
+
+    await page.click('#contnet > div > div > div.col-md-9.sett_page > div:nth-child(2) > div:nth-child(2) > button.btn.btn-main.btn-mat.btn-mat-raised.play-btn');
 
 //     }    console.log('ia');
 //     await page.click('div.c-texty_input__container.c-texty_input__container--multi_line');
