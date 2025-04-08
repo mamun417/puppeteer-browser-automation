@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 
 (async () => {
 
-    const accounts = [{userName: 'mamun007', password: 'mamun.me.417'}, {userName: 'mamun009', password: '121212'}];
+    const accounts = [{userName: 'mamun007', password: 'm'}, {userName: 'mamun009', password: '121212'}];
 
     // for (const acc of accounts) {
     const browser = await puppeteer.launch({headless: false});
@@ -10,7 +10,7 @@ const puppeteer = require('puppeteer');
     await page.goto('https://digitalit.app/', {waitUntil: 'networkidle2', timeout: 0});
 //await page.waitForNavigation({waitUntil: 'networkidle2'})
     await page.type('input[name=username]', 'mamun007')
-    await page.type('input[name=password]', 'mamun.me.417')
+    await page.type('input[name=password]', '')
     // await page.screenshot({path: 'example.png'});
 
     await page.keyboard.press('Enter');
